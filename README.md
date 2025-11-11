@@ -44,3 +44,46 @@ Dieses README erscheint automatisch auf deinem GitHub-Profil.
 ---
 
 ## 📦 Repo-Standards
+
+
+/project-name
+├─ README.md → Was, warum, wie starten (kurz!)
+├─ start.sh → Setup & Start (Install, venv/conda, run)
+├─ .env.example → Variablen mit Kommentaren
+├─ /data → input/, output/, samples/
+├─ /notebooks → Explorativ & Demos
+├─ /src → Reproduzierbarer Code
+├─ /docker → compose.yml + service-Configs
+└─ /docs → Diagramme, How-tos, Screens
+
+## 🔁 Wie ich arbeite
+- **80/20-Prinzip**: Erst der kleinste funktionierende Flow, dann vertiefen.  
+- **Transparenz**: Logs, Metriken (Accuracy/F1, Durchlaufzeiten), Retry-Strategien.  
+- **Sicherheit**: Least-Privilege-Creds, `.env`, Testkonten, Dry-Runs, klare Roll-Backs.  
+- **Dokumentation**: Kurze How-tos + Screens statt Romanen.
+
+---
+
+## 🤝 Kooperation & Austausch
+- **Ich suche**: Praxisnahe KMU-Use-Cases (Handwerk, Food, Services) für messbare Automatisierungsgewinne.  
+- **Ich biete**: Architektur, Umsetzung, Schulung & klare Übergabe – „Ich baue so, dass du es selbst betreiben kannst.“
+
+---
+
+## 📝 Lernen & Notizen (aktuell)
+- n8n Best Practices (Queue, Concurrency, Fehlerpfade, Webhooks vs. Polling)  
+- Robustheit in Data Pipelines (Schema-Checks, Backfills, Idempotenz)  
+- Sichere DeFi-Setups (Staking/Lending) mit nachvollziehbaren Risiken
+
+---
+
+## 📫 Kontakt
+- **Mail**: timo.goetz1988@gmail.com  
+- **LinkedIn/X**: siehe Badges oben  
+- **Standort**: DACH
+
+<p align="center">
+  <sub>Wenn dich reale, wartbare Automationen interessieren: Schreib mir – ich liebe es, komplexe Dinge handhabbar zu machen.</sub>
+</p>
+
+
