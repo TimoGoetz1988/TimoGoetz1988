@@ -18,72 +18,46 @@ Dieses README erscheint automatisch auf deinem GitHub-Profil.
 ---
 
 ## 🚀 Wofür ich stehe
-- **AI-Automation für KMU**: VoiceBots, Termin- & Support-Automatisierung, Google-Workspace-Flows, Self-Hosted n8n.
-- **Data & Decisions**: Von CSV & APIs → saubere Pipelines → Features → Forecasts → Dashboards.
-- **Hands-on Architektur**: Startskripte, Ordner-Standards, Docker-Compose, `.env`-Konventionen, Readmes zum Nachbauen.
+- **AI-Automation für KMU**: VoiceBots, Termin- & Support-Automatisierung, Google-Workspace-Flows, Self-Hosted n8n.  
+- **Data & Decisions**: Von CSV & APIs → saubere Pipelines → Features → Forecasts → Dashboards.  
+- **Hands-on Architektur**: Startskripte, Ordner-Standards, Docker-Compose, `.env`-Konventionen, Readmes zum Nachbauen.  
 - **Web3/DeFi-Neugier**: Fundierte, risiko-bewusste Setups (Lido/Aave/EigenLayer), On-Chain-Signale & Research.
 
 ---
 
 ## 🧭 Aktuell
-- **Ausbildung**: KI-Manager (DEKRA/TÜV) – Business Dev + Governance + praktische Umsetzung.
-- **Projekt „Metzgerei Mach“**: Absatz- und Produktionsprognosen (Wetter, Wochentag, Saison), Dashboard & Tagesplanung.
-- **Voice-AI**: Telefon-Agent mit Twilio → STT → LLM → Kalender/Sheets → TTS (End-to-End n8n + Cloud).
+- **Ausbildung**: KI-Manager (DEKRA/TÜV) – Business Dev + Governance + praktische Umsetzung.  
+- **Projekt „Metzgerei Mach“**: Absatz- und Produktionsprognosen (Wetter, Wochentag, Saison), Dashboard & Tagesplanung.  
+- **Voice-AI**: Telefon-Agent mit Twilio → STT → LLM → Kalender/Sheets → TTS (End-to-End n8n + Cloud).  
 - **KI-Content-Pipeline**: Blog → Kurzclips (YouTube/Shorts, TikTok, Pinterest) → Buffer-Auto-Veröffentlichung.
 
 ---
 
 ## 🛠️ Tech-Stack (kurz & ehrlich)
-**Automation**: n8n (self-hosted), Webhooks, Cron, Google Workspace, Twilio/LiveKit  
-**Data/ML**: Python (Pandas, NumPy, scikit-learn), Matplotlib/Plotly, Colab, CSV/Parquet  
-**Web & Apps**: HTML/CSS/JS Basics, Streamlit/Gradio, Google Sites/Framer/No-Code-Prototyping  
-**Cloud & Ops**: Docker/Compose, Hetzner/GCP, .env-Handling, Reverse Proxy/SSL  
-**KI-Tools**: ChatGPT/Gemini/Claude, Typecast (Voices), Freepik/Pikaso (Assets)  
-**Krypto/DeFi**: MetaMask, Lido, Aave, DeFiLlama-Recherche (sicherheits-fokussiert)
+**Automation:** n8n (self-hosted), Webhooks, Cron, Google Workspace, Twilio/LiveKit  
+**Data/ML:** Python (Pandas, NumPy, scikit-learn), Matplotlib/Plotly, Colab, CSV/Parquet  
+**Web & Apps:** HTML/CSS/JS Basics, Streamlit/Gradio, Google Sites/Framer/No-Code-Prototyping  
+**Cloud & Ops:** Docker/Compose, Hetzner/GCP, .env-Handling, Reverse Proxy/SSL  
+**KI-Tools:** ChatGPT/Gemini/Claude, Typecast (Voices), Freepik/Pikaso (Assets)  
+**Krypto/DeFi:** MetaMask, Lido, Aave, DeFiLlama-Recherche (sicherheits-fokussiert)
 
 ---
 
-## 📦 Repo-Standards
-
-
-/project-name
-├─ README.md → Was, warum, wie starten (kurz!)
-├─ start.sh → Setup & Start (Install, venv/conda, run)
-├─ .env.example → Variablen mit Kommentaren
-├─ /data → input/, output/, samples/
-├─ /notebooks → Explorativ & Demos
-├─ /src → Reproduzierbarer Code
-├─ /docker → compose.yml + service-Configs
-└─ /docs → Diagramme, How-tos, Screens
-
-## 🔁 Wie ich arbeite
-- **80/20-Prinzip**: Erst der kleinste funktionierende Flow, dann vertiefen.  
-- **Transparenz**: Logs, Metriken (Accuracy/F1, Durchlaufzeiten), Retry-Strategien.  
-- **Sicherheit**: Least-Privilege-Creds, `.env`, Testkonten, Dry-Runs, klare Roll-Backs.  
-- **Dokumentation**: Kurze How-tos + Screens statt Romanen.
-
----
-
-## 🤝 Kooperation & Austausch
-- **Ich suche**: Praxisnahe KMU-Use-Cases (Handwerk, Food, Services) für messbare Automatisierungsgewinne.  
-- **Ich biete**: Architektur, Umsetzung, Schulung & klare Übergabe – „Ich baue so, dass du es selbst betreiben kannst.“
-
----
-
-## 📝 Lernen & Notizen (aktuell)
-- n8n Best Practices (Queue, Concurrency, Fehlerpfade, Webhooks vs. Polling)  
-- Robustheit in Data Pipelines (Schema-Checks, Backfills, Idempotenz)  
-- Sichere DeFi-Setups (Staking/Lending) mit nachvollziehbaren Risiken
-
----
-
-## 📫 Kontakt
-- **Mail**: timo.goetz1988@gmail.com  
-- **LinkedIn/X**: siehe Badges oben  
-- **Standort**: DACH
+<h2 align="center">📦 Repository-Standards</h2>
 
 <p align="center">
-  <sub>Wenn dich reale, wartbare Automationen interessieren: Schreib mir – ich liebe es, komplexe Dinge handhabbar zu machen.</sub>
+  <em>Meine Projekte folgen einer klaren, wiederverwendbaren Struktur – dokumentiert, automatisierbar & sauber getrennt.</em>
 </p>
 
+<div align="center">
 
+```text
+/project-name
+├─ README.md                → Was, warum, wie starten (kurz!)
+├─ start.sh                 → Setup & Start (Install, venv/conda, run)
+├─ .env.example             → Variablen mit Kommentaren
+├─ /data                    → input/, output/, samples/
+├─ /notebooks               → Explorativ & Demos
+├─ /src                     → Reproduzierbarer Code
+├─ /docker                  → compose.yml + service-Configs
+└─ /docs                    → Diagramme, How-tos, Screens
