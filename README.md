@@ -1,63 +1,48 @@
-<!--
-Profil-README für Timo Götz – AI Automation Architect
-Dieses README erscheint automatisch auf deinem GitHub-Profil.
--->
+# Neues Projekt-Repository
 
-<h1 align="center">Hi, ich bin Timo – KI-Automation-Architekt & Data-Builder 🛠️🤖</h1>
-<p align="center">
-  <em>„Komplexität raus. Flow rein.“ – Brückenbauer zwischen echter Praxis (KMU) und High-Tech (AI, Data, Web3).</em>
-</p>
+Dieses Repository stellt ein schlankes Projekt-Template bereit, damit du schnell mit frischen Ideen starten kannst – ohne den alten Node.js-Stand. Die Struktur folgt deinen bevorzugten Standards und bietet sofort nutzbare Skripte für Setup und Ausführung.
 
-<p align="center">
-  <a href="mailto:timo.goetz1988@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-timo.goetz1988%40gmail.com-informational?logo=gmail"></a>
-  <a href="https://www.linkedin.com/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin"></a>
-  <a href="https://x.com/"><img alt="X" src="https://img.shields.io/badge/X-Follow-black?logo=x"></a>
-  <img alt="Focus" src="https://img.shields.io/badge/Focus-KI%20%7C%20Automation%20%7C%20Data-success">
-</p>
+## 🚀 Quickstart
+1. Kopiere die Beispiel-Umgebungsvariablen und passe sie an:
+   ```bash
+   cp .env.example .env
+   ```
+2. Starte Setup und Demo-Ausführung:
+   ```bash
+   ./start.sh
+   ```
+3. Passe den Code unter `src/` an dein Vorhaben an.
 
----
-
-## 🚀 Wofür ich stehe
-- **AI-Automation für KMU**: VoiceBots, Termin- & Support-Automatisierung, Google-Workspace-Flows, Self-Hosted n8n.  
-- **Data & Decisions**: Von CSV & APIs → saubere Pipelines → Features → Forecasts → Dashboards.  
-- **Hands-on Architektur**: Startskripte, Ordner-Standards, Docker-Compose, `.env`-Konventionen, Readmes zum Nachbauen.  
-- **Web3/DeFi-Neugier**: Fundierte, risiko-bewusste Setups (Lido/Aave/EigenLayer), On-Chain-Signale & Research.
-
----
-
-## 🧭 Aktuell
-- **Ausbildung**: KI-Manager (DEKRA/TÜV) – Business Dev + Governance + praktische Umsetzung.  
-- **Projekt „Metzgerei Mach“**: Absatz- und Produktionsprognosen (Wetter, Wochentag, Saison), Dashboard & Tagesplanung.  
-- **Voice-AI**: Telefon-Agent mit Twilio → STT → LLM → Kalender/Sheets → TTS (End-to-End n8n + Cloud).  
-- **KI-Content-Pipeline**: Blog → Kurzclips (YouTube/Shorts, TikTok, Pinterest) → Buffer-Auto-Veröffentlichung.
-
----
-
-## 🛠️ Tech-Stack (kurz & ehrlich)
-**Automation:** n8n (self-hosted), Webhooks, Cron, Google Workspace, Twilio/LiveKit  
-**Data/ML:** Python (Pandas, NumPy, scikit-learn), Matplotlib/Plotly, Colab, CSV/Parquet  
-**Web & Apps:** HTML/CSS/JS Basics, Streamlit/Gradio, Google Sites/Framer/No-Code-Prototyping  
-**Cloud & Ops:** Docker/Compose, Hetzner/GCP, .env-Handling, Reverse Proxy/SSL  
-**KI-Tools:** ChatGPT/Gemini/Claude, Typecast (Voices), Freepik/Pikaso (Assets)  
-**Krypto/DeFi:** MetaMask, Lido, Aave, DeFiLlama-Recherche (sicherheits-fokussiert)
-
----
-
-<h2 align="center">📦 Repository-Standards</h2>
-
-<p align="center">
-  <em>Meine Projekte folgen einer klaren, wiederverwendbaren Struktur – dokumentiert, automatisierbar & sauber getrennt.</em>
-</p>
-
-<div align="center">
-
+## 📦 Struktur
 ```text
-/project-name
-├─ README.md                → Was, warum, wie starten (kurz!)
-├─ start.sh                 → Setup & Start (Install, venv/conda, run)
-├─ .env.example             → Variablen mit Kommentaren
-├─ /data                    → input/, output/, samples/
-├─ /notebooks               → Explorativ & Demos
-├─ /src                     → Reproduzierbarer Code
-├─ /docker                  → compose.yml + service-Configs
-└─ /docs                    → Diagramme, How-tos, Screens
+./
+├─ README.md             → Projektüberblick & Anleitungen
+├─ start.sh              → Setup (venv) & Demo-Run
+├─ requirements.txt      → Python-Abhängigkeiten (aktuell leer)
+├─ .env.example          → Beispiel-Variablen
+├─ /data                 → input/, output/, samples/
+├─ /notebooks            → Experimente & Analysen
+├─ /src                  → Ausführbarer Code
+├─ /docker               → Compose-Setup als Vorlage
+└─ /docs                 → Zusatzdokus & Diagramme
+```
+
+## ⚙️ Umgebungsvariablen
+| Variable      | Beschreibung                                         | Standard        |
+| ------------- | ---------------------------------------------------- | --------------- |
+| `PROJECT_NAME`| Anzeigename deines Projekts                          | `Neues Projekt` |
+| `ENVIRONMENT` | Umgebungskennung (z. B. `development`, `production`) | `development`   |
+
+## 🧪 Skript-Details
+- `start.sh` erstellt eine lokale Python-Umgebung (`.venv`), installiert Abhängigkeiten aus `requirements.txt` (falls vorhanden) und führt `src/main.py` aus.
+- `src/main.py` lädt Variablen aus `.env` (falls vorhanden), sorgt für die Standard-Ordner unter `data/` und gibt den aktuellen Projektstatus aus.
+
+## 🐳 Docker (Vorlage)
+`docker/compose.yml` enthält einen minimalen Service, der denselben Code in einem Container ausführt. Passe die Datei nach Bedarf an (Ports, Binds, Abhängigkeiten).
+
+## ✅ Nächste Schritte
+- Erweitere `requirements.txt`, falls zusätzliche Libraries nötig sind.
+- Ergänze Business-Logik in `src/main.py` oder lege weitere Module an.
+- Ergänze Notebooks unter `notebooks/` für Analysen und Demos.
+
+Viel Erfolg beim Starten deines neuen Projekts!
