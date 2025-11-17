@@ -1,0 +1,1 @@
+# Trage hier optionale Python-Abhängigkeiten ein (z. B. requests, pandas).
