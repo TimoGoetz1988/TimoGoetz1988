@@ -6,8 +6,11 @@ import os
 from pathlib import Path
 from typing import Iterable
 
+from organizer import Organizer, OrganizerConfig
+
 
 ENV_FILE = Path(".env")
+DEFAULT_CONFIG_PATH = Path("data/organizer.yaml")
 
 
 def load_env(path: Path = ENV_FILE) -> None:
@@ -33,24 +36,35 @@ def ensure_directories(folders: Iterable[Path]) -> None:
 
 
 def build_status_message() -> str:
-    project_name = os.environ.get("PROJECT_NAME", "Neues Projekt")
+    project_name = os.environ.get("PROJECT_NAME", "Datei-Organizer")
     environment = os.environ.get("ENVIRONMENT", "development")
     return f"Projekt '{project_name}' ist bereit (Umgebung: {environment})."
 
 
-def main() -> None:
-    load_env()
+def _load_config() -> OrganizerConfig:
+    config_path = Path(os.environ.get("ORGANIZER_CONFIG", DEFAULT_CONFIG_PATH))
+    if config_path.exists():
+        return OrganizerConfig.from_yaml(config_path)
+
     data_root = Path("data")
-    ensure_directories(
-        [
-            data_root / "input",
-            data_root / "output",
-            data_root / "samples",
-        ]
+    ensure_directories([data_root / "input", data_root / "output"])
+    return OrganizerConfig(
+        source_dir=data_root / "input",
+        destination_root=data_root / "output",
+        log_file=Path("organizer.log"),
     )
 
+
+def main() -> None:
+    load_env()
+    organizer = Organizer(_load_config())
+    organizer.process_existing()
+
     print(build_status_message())
-    print(f"Datenordner geprüft unter: {data_root.resolve()}")
+    print(
+        "Überwachung gestartet – lege Dateien in den Eingangsordner, um sie automatisch zu sortieren."
+    )
+    organizer.start()
 
 
 if __name__ == "__main__":
