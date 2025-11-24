@@ -1,24 +1,24 @@
-# Neues Projekt-Repository
+# Datei-Organizer
 
-Dieses Repository stellt ein schlankes Projekt-Template bereit, damit du schnell mit frischen Ideen starten kannst – ohne den alten Node.js-Stand. Die Struktur folgt deinen bevorzugten Standards und bietet sofort nutzbare Skripte für Setup und Ausführung.
+Dieses Repository stellt einen flexiblen Datei-Organizer bereit, der eingehende Dateien automatisch sortiert. Über die YAML-Konfiguration kannst du Regeln für Datum, Projekte, Dateitypen und Spezialfälle definieren. Der Organizer überwacht den Eingangsordner kontinuierlich und protokolliert jede Aktion.
 
 ## 🚀 Quickstart
 1. Kopiere die Beispiel-Umgebungsvariablen und passe sie an:
    ```bash
    cp .env.example .env
    ```
-2. Starte Setup und Demo-Ausführung:
+2. Starte Setup und Organizer:
    ```bash
    ./start.sh
    ```
-3. Passe den Code unter `src/` an dein Vorhaben an.
+3. Lege Dateien in `data/input/` ab und beobachte die einsortierten Ergebnisse unter `data/output/`.
 
 ## 📦 Struktur
 ```text
 ./
 ├─ README.md             → Projektüberblick & Anleitungen
 ├─ start.sh              → Setup (venv) & Demo-Run
-├─ requirements.txt      → Python-Abhängigkeiten (aktuell leer)
+├─ requirements.txt      → Python-Abhängigkeiten (watchdog, pyyaml)
 ├─ .env.example          → Beispiel-Variablen
 ├─ /data                 → input/, output/, samples/
 ├─ /notebooks            → Experimente & Analysen
@@ -28,14 +28,16 @@ Dieses Repository stellt ein schlankes Projekt-Template bereit, damit du schnell
 ```
 
 ## ⚙️ Umgebungsvariablen
-| Variable      | Beschreibung                                         | Standard        |
-| ------------- | ---------------------------------------------------- | --------------- |
-| `PROJECT_NAME`| Anzeigename deines Projekts                          | `Neues Projekt` |
-| `ENVIRONMENT` | Umgebungskennung (z. B. `development`, `production`) | `development`   |
+| Variable         | Beschreibung                                                          | Standard            |
+| ---------------- | --------------------------------------------------------------------- | ------------------- |
+| `PROJECT_NAME`   | Anzeigename des Projekts                                               | `Datei-Organizer`   |
+| `ENVIRONMENT`    | Umgebungskennung (z. B. `development`, `production`)                   | `development`       |
+| `ORGANIZER_CONFIG` | Pfad zu einer alternativen YAML-Konfiguration (z. B. `configs/dev.yaml`) | `data/organizer.yaml` |
 
 ## 🧪 Skript-Details
-- `start.sh` erstellt eine lokale Python-Umgebung (`.venv`), installiert Abhängigkeiten aus `requirements.txt` (falls vorhanden) und führt `src/main.py` aus.
-- `src/main.py` lädt Variablen aus `.env` (falls vorhanden), sorgt für die Standard-Ordner unter `data/` und gibt den aktuellen Projektstatus aus.
+- `start.sh` erstellt eine lokale Python-Umgebung (`.venv`), installiert Abhängigkeiten aus `requirements.txt` und führt `src/main.py` aus.
+- `src/main.py` lädt Variablen aus `.env` (falls vorhanden), liest die Organizer-Konfiguration, verarbeitet vorhandene Dateien im Eingangsordner und startet anschließend die kontinuierliche Überwachung via `watchdog`.
+- `data/organizer.yaml` enthält Beispielregeln für Datum, Projektschlagwörter, Dateitypen, Ignore-Patterns und Spezialordner.
 
 ## 🐳 Docker (Vorlage)
 `docker/compose.yml` enthält einen minimalen Service, der denselben Code in einem Container ausführt. Passe die Datei nach Bedarf an (Ports, Binds, Abhängigkeiten).

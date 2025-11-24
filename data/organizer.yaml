@@ -1,0 +1,50 @@
+# Beispielkonfiguration für den Datei-Organizer
+source_dir: data/input
+destination_root: data/output
+log_file: organizer.log
+
+# Umschalten der Sortierkriterien
+use_date: true
+use_project: true
+use_filetype: true
+
+# "created" nutzt das Erstellungsdatum, "modified" das Änderungsdatum,
+# "received" den Zeitpunkt der Erkennung.
+date_source: modified
+# Format-Template, verfügbare Platzhalter: year, month, day
+# Beispiel: "{year}/{month:02d}" ergibt 2025/11
+date_folder_format: "{year}/{month:02d}"
+
+# Projekterkennung anhand von Schlagwörtern im Dateinamen
+project_keywords:
+  ProjektX: ["ProjektX", "PX"]
+  Youtube_Fitness_2024: ["youtube", "fitness", "2024"]
+
+# Erweiterungen → Zielordner
+# Nicht aufgeführte Endungen landen in "Sonstiges".
+type_folders:
+  pdf: PDF
+  png: Bilder
+  jpg: Bilder
+  jpeg: Bilder
+  csv: Excel
+  xlsx: Excel
+  xls: Excel
+  txt: Text
+  md: Text
+  py: Script
+  zip: Archive
+
+# Feinregeln für Spezialfälle
+rules:
+  - name: Januar-Rechnungen 2025
+    patterns: ["Rechnung", "2025-01"]
+    target: Rechnungen_Januar_2025
+  - name: Backups
+    patterns: ["backup", "snapshot"]
+    target: Snapshots
+
+# Dateien, die nicht angefasst werden sollen
+ignore_patterns:
+  - "*.tmp"
+  - "~$*"
